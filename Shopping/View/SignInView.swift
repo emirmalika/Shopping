@@ -1,5 +1,5 @@
 //
-//  ContentView.swift
+//  SignInView.swift
 //  Shopping
 //
 //  Created by Malik Em on 10.03.2023.
@@ -7,8 +7,7 @@
 
 import SwiftUI
 
-struct ContentView: View {
-    
+struct SignInView: View {
     @State private var firstName = ""
     @State private var lastName = ""
     @State private var email = ""
@@ -97,8 +96,8 @@ struct ContentView: View {
     }
 }
 
-struct ContentView_Previews: PreviewProvider {
+struct SignInView_Previews: PreviewProvider {
     static var previews: some View {
-        ContentView()
+        SignInView()
     }
 }
