@@ -54,8 +54,10 @@ struct SignInView: View {
                     }) {
                         Text("Log in")
                             .padding(.leading, -45)
-                    }
-                    .padding(.horizontal, 65)
+                    }.padding(.horizontal, 65)
+                        .sheet(isPresented: $logInBtnPressed) {
+                            LogInView()
+                        }
                 }.padding(.top, -20)
                 
             }.padding(.horizontal, 43)
