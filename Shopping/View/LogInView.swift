@@ -34,6 +34,16 @@ struct LogInView: View {
             
             Button(action: {
                 self.logInBtnPressed.toggle()
+                let users = User.loadUsers()
+               
+                for user in users {
+                    if self.firstName == user.firstName {
+                        print("true")
+                        break
+                    } else {
+                        print("false")
+                    }
+                }
             }) {
                 Text("Login")
             } .padding()

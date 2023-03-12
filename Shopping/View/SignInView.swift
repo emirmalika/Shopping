@@ -46,6 +46,12 @@ struct SignInView: View {
                     let newUser = User(firstName: self.firstName, lastName: self.lastName, email: self.email)
                     users.append(newUser)
                     User.saveUsers(users)
+                    
+                    if User.isValidEmail(self.email) == true {
+                        print("tr")
+                    } else {
+                        print("fls")
+                    }
                 }) {
                     Text("Sign in")
                 } .padding()
