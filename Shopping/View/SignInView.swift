@@ -11,6 +11,11 @@ struct SignInView: View {
     @State private var firstName = ""
     @State private var lastName = ""
     @State private var email = ""
+    @State private var users: [User] = User.loadUsers() {
+        didSet {
+            User.saveUsers(users)
+        }
+    }                                
     @State private var signInBtnPressed = false
     @State private var logInBtnPressed = false
     
@@ -38,6 +43,9 @@ struct SignInView: View {
                 
                 Button(action: {
                     self.signInBtnPressed.toggle()
+                    let newUser = User(firstName: self.firstName, lastName: self.lastName, email: self.email)
+                    users.append(newUser)
+                    User.saveUsers(users)
                 }) {
                     Text("Sign in")
                 } .padding()
